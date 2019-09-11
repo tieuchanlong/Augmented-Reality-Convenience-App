@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: aac20a5c57ca3ce4d9d08f2577acc093
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: bedroom
+    100002: doorbedroom
+    100004: doorext
+    100006: doorgarage
+    100008: doorgarden01
+    100010: doorgarden02
+    100012: doorwc
+    100014: garaje
+    100016: jardi
+    100018: livingroom
+    100020: //RootNode
+    100022: WC
+    400000: bedroom
+    400002: doorbedroom
+    400004: doorext
+    400006: doorgarage
+    400008: doorgarden01
+    400010: doorgarden02
+    400012: doorwc
+    400014: garaje
+    400016: jardi
+    400018: livingroom
+    400020: //RootNode
+    400022: WC
+    2100000: Material_013
+    2100002: Material
+    2100004: Material_016
+    2100006: fusta001
+    2100008: pot001
+    2100010: Material_019
+    2100012: Material_001
+    2100014: pneumatic001
+    2100016: Material_009
+    2100018: Material_007
+    2100020: Material_003
+    2100022: Material_008
+    2100024: Material_021
+    2100026: Material_012
+    2100028: Material_015
+    2100030: Material_017
+    2100032: Material_011
+    2100034: Material_004
+    2100036: Material_005
+    2100038: Material_006
+    2100040: Material_002
+    2100042: Material_010
+    2100044: Material_014
+    2300000: bedroom
+    2300002: doorbedroom
+    2300004: doorext
+    2300006: doorgarage
+    2300008: doorgarden01
+    2300010: doorgarden02
+    2300012: doorwc
+    2300014: garaje
+    2300016: jardi
+    2300018: livingroom
+    2300020: WC
+    3300000: bedroom
+    3300002: doorbedroom
+    3300004: doorext
+    3300006: doorgarage
+    3300008: doorgarden01
+    3300010: doorgarden02
+    3300012: doorwc
+    3300014: garaje
+    3300016: jardi
+    3300018: livingroom
+    3300020: WC
+    4300000: doorgarden02
+    4300002: doorgarden01
+    4300004: doorext
+    4300006: doorbedroom
+    4300008: WC
+    4300010: doorwc
+    4300012: doorgarage
+    4300014: jardi
+    4300016: garaje
+    4300018: bedroom
+    4300020: livingroom
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
