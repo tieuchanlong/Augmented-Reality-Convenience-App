@@ -147,6 +147,7 @@
     <Compile Include="Assets\Scripts\CharacterTimeControl.cs" />
     <Compile Include="Assets\Scripts\JoystickController.cs" />
     <Compile Include="Assets\Scripts\LoadObject.cs" />
+    <Compile Include="Assets\Scripts\ManageWeather.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\SampleWebView.cs" />
     <Compile Include="Assets\Scripts\Weather_Text.cs" />

@@ -21,11 +21,10 @@ public class Weather_Text : MonoBehaviour
 
     string Zero;
     WWW www;
-    string url = "https://api.apixu.com/v1/current.json?key=84c61c16747d42baaac164809191307&q=Toronto";
+    string url = "https://api.apixu.com/v1/current.json?key=84c61c16747d42baaac164809191307&q=" + ManageWeather.locations[ManageWeather.location];
 
     void Start() // Use this for initialization
     {
-        www = new WWW(url);
         StartCoroutine(WaitForRequest(www));
 
 
@@ -34,6 +33,8 @@ public class Weather_Text : MonoBehaviour
 
     IEnumerator WaitForRequest(WWW www)
     {
+        url = "https://api.apixu.com/v1/current.json?key=84c61c16747d42baaac164809191307&q=" + ManageWeather.locations[ManageWeather.location];
+        www = new WWW(url);
         yield return www;
 
         // check for errors
@@ -63,6 +64,8 @@ public class Weather_Text : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        StartCoroutine(WaitForRequest(www));
+
         GetComponent<TextMesh>().text = temperature.ToString("f0") + "° C " + "in \n " + JSON_Name + ",\n " + JSON_Country;
         if (JSON_Weather == "Overcast" || JSON_Weather == "Partly cloudy")
         {
