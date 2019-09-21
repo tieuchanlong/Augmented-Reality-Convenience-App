@@ -14,5 +14,6 @@
 
 ### Another smaller challenge is looking for Watson IBM Cloud tutorial to integrate voice command into the application. It took sometimes for Youtube and blog research but I found a video that taught me how to get the API back to the Unity application.
 
-## Future Innovatiom
+## Future Innovation
 ### The web view and music player is currently being developed. It will soon be released more.
+### The web view could be integrated from the package of unity-webview on github.
