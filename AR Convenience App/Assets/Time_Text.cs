@@ -32,6 +32,8 @@ public class Time_Text : MonoBehaviour
 
     IEnumerator WaitForRequest(WWW www)
     {
+        url = "https://api.apixu.com/v1/current.json?key=84c61c16747d42baaac164809191307&q=" + ManageWeather.locations[ManageWeather.location];
+        www = new WWW(url);
         yield return www;
 
         // check for errors
@@ -61,6 +63,7 @@ public class Time_Text : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        StartCoroutine(WaitForRequest(www));
         second += Time.deltaTime;
         time_info = JSON_Time.Split(char.Parse(" "));
         furthertime_info = time_info[1].Split(char.Parse(":"));
