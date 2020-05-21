@@ -23,3 +23,7 @@ The app is developed using Unity, C# and basic Vuforia integration. I spent arou
 ## Future Innovation
 * The web view and music player is currently being developed. It will soon be released more.
 * The web view could be integrated from the package of unity-webview on github.
+
+## Project Information
+* Source: https://github.com/tieuchanlong/Augmented-Reality-Convenience-App
+* Android APK download link: https://drive.google.com/file/d/15GW2ggVwkl3Hof4e9O_NPTKAgAz2PWBk/view?usp=sharing
