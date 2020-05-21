@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-C:/Users/tieuc/Github/Augmented-Reality-Convenience-App/Built App/AR Convenience.apk
+D:/AR Apps/AR Convenience.apk
 SceneListBegin?
 Assets/Scenes/SampleScene.unity
 SceneListEnd?

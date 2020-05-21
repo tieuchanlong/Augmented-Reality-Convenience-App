@@ -21,136 +21,27 @@ public class Time_Text : MonoBehaviour
 
     string Zero;
     WWW www;
-    string url = "https://api.apixu.com/v1/current.json?key=84c61c16747d42baaac164809191307&q=Edmonton";
+    string url = "https://api.apixu.com/v1/current.json?key=84c61c16747d42baaac164809191307&q=" + ManageWeather.locations[ManageWeather.location];
 
     void Start() // Use this for initialization
     {
         www = new WWW(url);
-        StartCoroutine(WaitForRequest(www));
 
-    }
-
-    IEnumerator WaitForRequest(WWW www)
-    {
-        url = "https://api.apixu.com/v1/current.json?key=84c61c16747d42baaac164809191307&q=" + ManageWeather.locations[ManageWeather.location];
-        www = new WWW(url);
-        yield return www;
-
-        // check for errors
-        if (www.error == null)
-        {
-            string work = www.text;
-
-            _Particle fields = JsonUtility.FromJson<_Particle>(work);
-            JSON_Name = fields.location.name;
-            JSON_Country = fields.location.country;
-            JSON_Weather = fields.current.condition.text;
-            JSON_Temperature = fields.current.temp_c;
-            JSON_Time = fields.location.localtime;
-            temperature = float.Parse(JSON_Temperature);
-            Debug.Log(JSON_Name);
-            Debug.Log(JSON_Country);
-            Debug.Log(JSON_Weather);
-            Debug.Log(JSON_Temperature);
-            Debug.Log(JSON_Time);
-        }
-        else
-        {
-
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(WaitForRequest(www));
-        second += Time.deltaTime;
-        time_info = JSON_Time.Split(char.Parse(" "));
-        furthertime_info = time_info[1].Split(char.Parse(":"));
-        int hour, minute;
-        int.TryParse(furthertime_info[0], out hour);
-        int.TryParse(furthertime_info[1], out minute);
+        string[] data = System.DateTime.Now.ToString().Split(new char[] { ' ' });
+        string[] time = data[1].Split(new char[] { ':' });
 
-        if (second >= 60)
-        {
-            minute += 1;
+        if (data[2] == "PM")
+            time[0] = (int.Parse(time[0]) + 12).ToString();
 
-            if (minute >= 60)
-            {
-                minute = 0;
-                hour += 1;
+        if (time[0].Length == 1)
+            time[0] = '0' + time[0];
 
-                if (hour >= 24)
-                {
-                    hour = 0;
-                }
-            }
-        }
+         GetComponent<TextMesh>().text = time[0] + ":" + time[1];
 
-        Debug.Log(hour + " " + minute + " " + second);
-
-        if (hour < 10)
-        {
-            furthertime_info[0] = "0" + hour.ToString();
-        }
-        else
-        {
-            furthertime_info[0] = hour.ToString();
-        }
-
-        if (minute < 10)
-        {
-            furthertime_info[1] = "0" + minute.ToString();
-        }
-        else
-        {
-            furthertime_info[1] = minute.ToString();
-        }
-
-        time_info[1] = furthertime_info[0] + ":" + furthertime_info[1];
-
-        GetComponent<TextMesh>().text = time_info[1];
-
-    }
-
-    void UpdateTime()
-    {
-        www = new WWW(url);
-        StartCoroutine(WaitForRequest(www));
-    }
-
-
-    [System.Serializable]
-    public class _condition
-    {
-        public string text;
-
-    }
-
-    [System.Serializable]
-    public class _location
-    {
-        public string name;
-        public string country;
-        public string localtime;
-    }
-
-    [System.Serializable]
-    public class _current
-    {
-        public _condition condition;
-        public string temp_c;
-
-    }
-
-
-    [System.Serializable]
-    public class _Particle
-    {
-        public _condition condition;
-        public _location location;
-        public _current current;
-        public string temp;
-        public string main;
     }
 }

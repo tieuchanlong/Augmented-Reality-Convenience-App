@@ -112,7 +112,13 @@ public class AlarmSetting : MonoBehaviour
         if (minute < 10) minutedig = "0" + minute.ToString();
         else minutedig = minute.ToString();
 
-        if (hourdig + ":" + minutedig == Time_Text.time_info[1] && AlarmOn == true)
+        string[] data = System.DateTime.Now.ToString().Split(new char[] { ' '});
+        string[] time = data[1].Split(new char[] { ':' });
+
+        if (time[0].Length == 1)
+            time[0] = '0' + time[0];
+
+        if (hourdig + ":" + minutedig == time[0] + time[1] && AlarmOn == true)
         {
             Alarm.SetActive(true);
         }

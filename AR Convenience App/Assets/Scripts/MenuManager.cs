@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
@@ -67,5 +68,10 @@ public class MenuManager : MonoBehaviour
     IEnumerator WaitTime()
     {
         yield return new WaitForSeconds(0.00f);
+    }
+
+    public void StartApp()
+    {
+        SceneManager.LoadScene(1);
     }
 }

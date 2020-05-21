@@ -21,19 +21,16 @@ public class Weather_Text : MonoBehaviour
 
     string Zero;
     WWW www;
-    string url = "https://api.apixu.com/v1/current.json?key=84c61c16747d42baaac164809191307&q=" + ManageWeather.locations[ManageWeather.location];
+    string url = "http://api.openweathermap.org/data/2.5/weather?q=" + ManageWeather.locations[ManageWeather.location] + "&APPID=2249cec4e08c29433668be5504cc9dec";
 
     void Start() // Use this for initialization
     {
         StartCoroutine(WaitForRequest(www));
-
-
-
     }
 
     IEnumerator WaitForRequest(WWW www)
     {
-        url = "https://api.apixu.com/v1/current.json?key=84c61c16747d42baaac164809191307&q=" + ManageWeather.locations[ManageWeather.location];
+        url = "http://api.openweathermap.org/data/2.5/weather?q=" + ManageWeather.locations[ManageWeather.location] + "&APPID=2249cec4e08c29433668be5504cc9dec";
         www = new WWW(url);
         yield return www;
 
@@ -43,11 +40,12 @@ public class Weather_Text : MonoBehaviour
             string work = www.text;
 
             _Particle fields = JsonUtility.FromJson<_Particle>(work);
-            JSON_Name = fields.location.name;
-            JSON_Country = fields.location.country;
-            JSON_Weather = fields.current.condition.text;
+            JSON_Name = fields.name;
+            JSON_Country = fields.sys.country;
+            /*JSON_Weather = fields.current.condition.text;
             JSON_Temperature = fields.current.temp_c;
-            JSON_Time = fields.location.localtime;
+            JSON_Time = fields.location.localtime;*/
+            JSON_Temperature = (fields.main.temp - 271.23).ToString();
             temperature = float.Parse(JSON_Temperature);
             Debug.Log(JSON_Name);
             Debug.Log(JSON_Country);
@@ -88,37 +86,83 @@ public class Weather_Text : MonoBehaviour
 
 
     [System.Serializable]
-    public class _condition
+    public class _coord
     {
-        public string text;
+        public float lon;
+        public float lat;
 
     }
 
     [System.Serializable]
-    public class _location
+    public class _weather
     {
-        public string name;
+        public int id;
+        public string main;
+        public string description;
+        public string icon;
+    }
+
+    [System.Serializable]
+    public class _main
+    {
+        public float temp;
+        public float feels_like;
+        public float temp_min;
+        public float temp_max;
+        public float pressure;
+        public float humidity;
+    }
+
+    [System.Serializable]
+    public class _wind
+    {
+        public float speed;
+        public float deg;
+    }
+
+    [System.Serializable]
+    public class _clouds
+    {
+        public string all;
+    }
+
+    [System.Serializable]
+    public class _sys
+    {
+        public int type;
+        public int id;
         public string country;
-        public string localtime;
-    }
-
-    [System.Serializable]
-    public class _current
-    {
-        public _condition condition;
-        public string temp_c;
-
+        public string sunrise;
+        public string sunset;
     }
 
 
     [System.Serializable]
     public class _Particle
     {
-        public _condition condition;
-        public _location location;
-        public _current current;
-        public string temp;
-        public string main;
+        public _coord coord;
+        public _weather weather;
+
+        public string _base;
+
+        public _main main;
+
+        public int visibility;
+
+        public _wind wind;
+
+        public _clouds cloud;
+
+        public string dt;
+
+        public _sys sys;
+
+        public string timezone;
+        public int id;
+        public string name;
+        public float cod;
+
+
     }
 
 
