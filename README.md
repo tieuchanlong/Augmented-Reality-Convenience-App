@@ -15,6 +15,8 @@ The app is developed using Unity, C# and basic Vuforia integration. I spent arou
 
 * Another smaller challenge is looking for Watson IBM Cloud tutorial to integrate voice command into the application. It took sometimes for Youtube and blog research but I found a video that taught me how to get the API back to the Unity application.
 
+## Programming Language
+C#
 
 ## Major Components
 * Vuforia
