@@ -24,6 +24,9 @@ The app is developed using Unity, C# and basic Vuforia integration. I spent arou
 * The web view and music player is currently being developed. It will soon be released more.
 * The web view could be integrated from the package of unity-webview on github.
 
+## Download Instruction
+Download the APK file from below. Then go to the Image Target folder, and download the image and print it out on a paper. Then use the APK file for your Android Phone to test out the project on the paper.
+
 ## Project Information
 * Source: https://github.com/tieuchanlong/Augmented-Reality-Convenience-App
 * Android APK download link: https://drive.google.com/file/d/15GW2ggVwkl3Hof4e9O_NPTKAgAz2PWBk/view?usp=sharing
